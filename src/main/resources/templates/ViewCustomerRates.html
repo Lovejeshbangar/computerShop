@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>View Customer Records</title>
+<link rel="stylesheet" type="text/css" href="../static/style/ViewCustomer.css"
+        th:href="@{style/ViewCustomer.css}">
+</head>
+<body>
+<a href="/index" th:href="@{/index}" style="
+    color: black;
+" >Go Back to Home</a>
+<div id="table">
+<center>
+<h1>You can see all the Customer Records here</h1>
+<form action="#" th:action="@{/view}" method="GET">
+<table>
+<tr>
+<th>CustomerId: </th>
+<th>Labor Charges </th>
+<th>Hardware Charges </th>
+<th>Shipping </th>
+<th>Time Required</th>
+</tr>
+<tr th:each="customerInfo : ${customerInfo}">
+<td th:text="${customer.customerId}"></td>
+<td th:text="${customer.laborCharges}"></td>
+<td th:text="${customer.hardwareCharges}"></td>
+<td th:text="${customer.ShippingCharges}"></td>
+<td th:text="${customer.TimeRequired}"></td>
+</table>
+</form>
+</center>
+</div>
+</body>
+</html>

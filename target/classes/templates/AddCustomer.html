@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" type="text/css" href="../static/style/AddCustomer.css"
+        th:href="@{style/AddCustomer.css}">
+<meta charset="ISO-8859-1">
+<title>Add Customer</title>
+</head>
+<body>
+<a href="/index" th:href="@{/index}" style="
+    color: black;
+" >Go Back to Home</a>
+<div>
+<center>
+<h1>Add Customer Information</h1>
+</center>
+<form method="GET" action="" th:action="@{addCustomer}" th:object="${customer}">
+<div class="question">
+<input type="text" th:field="*{name}" required>
+<label>Name: </label>
+</div>
+<div class="question">
+<input type="text" th:field="*{number}" required>
+<label>Phone Number: </label>
+</div>
+<div class="question">
+<input type="text" th:field="*{address}" required>
+<label>Address: </label>
+</div>
+<div class="question">
+<input type="text" th:field="*{email}" required>
+<label>Email: </label>
+</div>
+<div class="question">
+<input type="text" th:field="*{repairInfo}" required>
+<label>Repair Info: </label>
+</div>
+<button type="submit">Submit</button><br><br><br><br>
+</form>
+
+
+<a href="/view"><button type ="submit">View Records</button></a>
+<a href="/viewRates"><button type ="submit">View Customer Rates</button></a>
+</div>
+</body>
+</html>

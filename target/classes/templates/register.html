@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="ISO-8859-1">
+<title>Register</title>
+</head>
+<body>
+<a href="/index" th:href="@{/index}" style="
+    color: black;
+" >Go Back to Home</a>
+	<h1>Register User</h1>
+	<form action="#" th:action="@{/register}" method="post">
+		Name:<input type="text" name="name"><br /> 
+		Password:<input type="password" name="password"><br /> 
+			<input type="submit" value="Add User">
+	</form>
+</body>
+</html>

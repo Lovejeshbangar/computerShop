@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>View Customer Records</title>
+<link rel="stylesheet" type="text/css" href="../static/style/ViewCustomer.css"
+        th:href="@{style/ViewCustomer.css}">
+</head>
+<body>
+<div id="table">
+<center>
+
+<h1>You can see all the Customer Records here</h1>
+<form action="#" th:action="@{/view}" method="GET">
+<table>
+<tr>
+<th>ID: </th>
+<th>Name: </th>
+<th>Phone Number: </th>
+<th>Email: </th>
+<th>Address:</th>
+<th>Repair Info: </th>
+</tr>
+<tr th:each="customer : ${customer}">
+<td th:text="${customer.customerId}"></td>
+<td th:text="${customer.name}"></td>
+<td th:text="${customer.number}"></td>
+<td th:text="${customer.email}"></td>
+<td th:text="${customer.address}"></td>
+<td th:text="${customer.repairInfo}"></td>
+<td> <a href="" th:href="@{/editLinkCustomer/{id}(id=${customer.customerId})}">Edit</a></td>
+<td> <a href="" th:href="@{/deleteLinkCustomer/{id}(id=${customer.customerId})}">Delete</a></td>
+<td> <a href="" th:href="@{/addInfoLink/{id}(id=${customer.customerId})}">Processed Database5</a></tr>
+</table>
+</form>
+</center>
+</div>
+</body>
+</html>

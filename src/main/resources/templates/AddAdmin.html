@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" type="text/css" href="../static/style/AddAdmin.css" th:href="@{/style/AddAdmin.css}">
+<meta charset="ISO-8859-1">
+<title>Add Admin</title>
+</head>
+<body>
+<a href="/index" th:href="@{/index}" style="
+    color: black;
+" >Go Back to Home</a>
+<center><h1>ADD ADMIN</h1></center>
+<form action="/addAdmin" method="GET">
+<table>
+<tr>
+<th>Customer Id:</th> 
+<th>Name:</th> 
+<th>Number:</th>
+<th>Email:</th> 
+<th>Address:</th> 
+<th>Repair Info:</th>
+<th>Labor Charges:</th>
+<th>Hardware Charges:</th>
+<th>Shipping Charges:</th>
+<th>Time Required:</th>
+</tr>
+<tr>
+<td th:text="${customer.customerId}"></td>
+<td th:text="${customer.name}" ></td>
+<td th:text="${customer.number}"></td>
+<td th:text="${customer.email}"></td>
+<td th:text="${customer.address}"></td>
+<td th:text="${customer.repairInfo}"></td>
+
+<td> <input type="text" name="laborCharges" size="30" maxlength="40" required>
+ <input type="hidden" name="id" th:value="${customer.customerId}" required></td>
+<td> <input type="text" name="hardwareCharges" size="30" maxlength="40" required>
+<input type="hidden" name="email" th:value="${customer.email}" required>
+<input type="hidden" name="name" th:value="${customer.name}" required></td>
+<td> <input type="text" name="shippingCharges" size="30" maxlength="40" required></td>
+<td> <input type="text" name="timeRequired" size="30" maxlength="40" required></td>
+</tr>
+</table>
+<br><br><br>
+<center>
+<button type="submit">Update</button>
+</center>
+</form>
+
+</body>
+</html>

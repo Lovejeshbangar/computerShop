@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../static/style/Search.css"
+        th:href="@{style/Search.css}">
+</head>
+<body style="background-color: #79a3e8;">
+<a href="/index" th:href="@{/index}" style="
+    color: black;
+" >Go Back to Home</a>
+<form>
+	<center><h1>SEARCH</h1></center>
+	<div class="question">
+	<input type="text" name ="search" required>
+	<label>Input you Search criteria</label>
+	</div>
+	<div class="select">
+	<select id="slct" name="searchOption">
+	
+	<option selected disabled>Choose a search category</option>
+		<option value="id">Customer Id</option>
+		<option value="name">Name</option>
+		<option value="number">Number</option>
+		<option value="address">Address</option>	
+		<option value="email">Email</option>	
+	</select>
+	</div>
+	<center>
+	<button type="submit " value="Submit" formaction="searchByCriteria">Submit</button>
+	</center>
+</form>
+<center>
+<h1>You can see the Customer Records here</h1>
+
+<table>
+<tr>
+<th>ID: </th>
+<th>Name: </th>
+<th>Phone Number: </th>
+<th>Email: </th>
+<th>Address:</th>
+<th>Repair Info: </th>
+</tr>
+<tr th:each="customer : ${customer}">
+<td th:text="${customer.customerId}"></td>
+<td th:text="${customer.name}"></td>
+<td th:text="${customer.number}"></td>
+<td th:text="${customer.email}"></td>
+<td th:text="${customer.address}"></td>
+<td th:text="${customer.repairInfo}"></td>
+<td th:switch="${customer.customerId}"> 
+<p th:case="0" >Edit</p>
+<a th:case="*" href="" th:href="@{/editLinkCustomer/{id}(id=${customer.customerId})}">Edit</a></td>
+<td th:switch="${customer.customerId}"> 
+<p th:case="0" >Delete</p>
+<a th:case="*" href="" th:href="@{/deleteLinkCustomerSearch/{id}(id=${customer.customerId})}">Delete</a></td>
+<td th:switch="${customer.customerId}"> 
+<p th:case="0" >Processed Database5</p>
+<a th:case="*" href="" th:href="@{/addInfoLink/{id}(id=${customer.customerId})}">Processed database5</a></td>
+</table>
+
+
+</center>
+</table>
+</body>
+</html>

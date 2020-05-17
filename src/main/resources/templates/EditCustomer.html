@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleagf.org">
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="../static/style/EditCustomer.css"
+        th:href="@{/style/EditCustomer.css}">
+<title>Insert title here</title>
+</head>
+<body>
+<a href="/index" th:href="@{/index}" style="
+    color: black;
+" >Go Back to Home</a>
+<center>
+<h1>Edit Page</h1>
+<a href="" th:href="@{/viewRecordcustomer}"><button type="submit">Go Back To View Books</button></a>
+<br><br><br>
+
+<table>
+<tr>
+<th>ID </th>
+<th>Title </th>
+<th>Author </th>
+<th>Price </th>
+<th>Inventory Quantity </th>
+<th>Course1 </th>
+<th>Course2 </th>
+<th>Course3 </th>
+</tr>
+<tr>
+<td th:text="${customer.customerId}"></td>
+<td th:text="${customer.name}"></td>
+<td th:text="${customer.number}"></td>
+<td th:text="${customer.email}"></td>
+<td th:text="${customer.address}"></td>
+<td th:text="${customer.repairInfo}"></td>
+</tr>
+</table>
+<br><br><br>
+</center>
+<form action="/editCustomer" method="GET">
+<div id="d">
+<input type="hidden" name="customerId" th:value="${customer.customerId}"> 
+<div class="question">
+<input type="text" size="50" name="name" maxlength="70" th:value="${customer.name}" required>
+<label>Name:</label>  
+</div>
+<div class="question">
+ <input type="text" size="50" name="number" maxlength="70" th:value="${customer.number}" required>
+<label>Number:</label>
+</div>
+<div class="question">
+<input type="text" size="50" name="email" maxlength="70" th:value="${customer.email}" required>
+<label>Email:</label>  
+</div>
+<div class="question">
+ <input type="text" size="address" name="address" maxlength="70" th:value="${customer.address}" required>
+<label>Address:</label>
+</div>
+<div class="question">
+<input type="text" size="50" name="repairInfo" maxlength="70" th:value="${customer.repairInfo}" required>
+<label>Repair Info:</label> 
+</div>
+</div>
+<br><br><br>
+<button type="submit" >Update</button>
+
+</form>
+
+
+
+</body>
+</html>

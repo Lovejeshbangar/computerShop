@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="../static/style/Index.css"
+        th:href="@{style/Index.css}">
+<title>Home Page</title>
+</head>
+
+<body>
+<a href="/index" th:href="@{/index}" style="
+    color: black;
+" >Go Back to Home</a>
+<ul class="menu cf">
+  <li><a href="" th:href="@{/add}">Submit</a></li>
+  <li><a href="" th:href="@{/search}">Search</a></li>
+  <li><a href="/dummyRecords" th:href="@{/dummyRecords}">DUMMY RECORDS</a></li>
+
+    </ul>			
+  </li>
+	
+  <div class="text">
+    COMPUTER REPAIR SHOP
+  </div>
+</body>
+</html>

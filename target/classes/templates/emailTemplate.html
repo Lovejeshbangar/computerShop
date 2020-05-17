@@ -1,0 +1,29 @@
+<!DOCTYPEhtml>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<style>
+div{color: red;}
+h1{color: blue;}
+h2{color: green;}
+h3{color: green;}
+body
+{
+
+background-color: coral;
+}
+</style>
+</head>
+<body>
+
+<center>
+<h1>This is an automatic email</h1>
+<h2 th:text="'Welcome ' + ${name} +' This is your fucking price Summary. Pay up Bitch'">Standard Greeting</h2>
+<h3>Labor Charges: </h3>
+<div th:text="${charge1}">Some message</div>
+<h3>Hardware Charges: </h3>
+<div th:text="${charge2}">Some Footer</div>
+<h3>Shipping Charges: </h3>
+<div th:text="${charge3}">Some Footer</div>
+</center>
+</body>
+</html>
